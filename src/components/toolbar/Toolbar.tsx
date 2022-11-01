@@ -1,5 +1,5 @@
 import React from 'react';
-import Filter from '../filter/Filter';
+import FilterModal from '../filter/FilterModal';
 import CreateModal from '../createModal/CreateModal';
 import { useEffect, useRef, useState } from 'react';
 import { StyledToolbarDiv } from './toolbar.styles';
@@ -47,7 +47,7 @@ const Toolbar: React.FC = () => {
           >
             <CgOptions className='option-btn' />
           </div>
-          {popupOptions && <Filter />}
+          {popupOptions && <FilterModal />}
         </div>
 
         <div ref={createRef} className='create-container'>

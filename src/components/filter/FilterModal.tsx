@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledFilterDiv } from './filter.styles';
+import { StyledFilterModalDiv } from './filterModal.styles';
 import { useCallback, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { setQuery, setColumn, setLogic } from '../../redux/filter/filterSlice';
@@ -8,7 +8,7 @@ import { FaGreaterThan, FaLessThan, FaEquals } from 'react-icons/fa';
 import { selectFilter } from '../../redux/filter/filterSelector';
 import { useAppDispatch } from '../../redux/store';
 
-const Filter = () => {
+const FilterModal = () => {
   const dispatch = useAppDispatch();
   const [, setValue] = useState('');
   const { column, logic, query } = useSelector(selectFilter);
@@ -28,35 +28,35 @@ const Filter = () => {
     updateInput(event.target.value);
   };
 
-  // Оправление в store зачений поиска колонки имени
+  // Отправление в store значений поиска колонки имени
   const handleNameColumn = () => {
     dispatch(setColumn({ column: 'name' }));
     dispatch(setLogic({ logic: 'include' }));
     dispatch(setQuery({ query: '' }));
   };
 
-  // Оправление в store зачений поиска колонки заказчика
+  // Отправление в store значений поиска колонки заказчика
   const handleCustomerColumn = () => {
     dispatch(setColumn({ column: 'customer' }));
     dispatch(setLogic({ logic: 'include' }));
     dispatch(setQuery({ query: '' }));
   };
 
-  // Оправление в store зачений поиска колонки веса
+  // Отправление в store значений поиска колонки веса
   const handleWeightColumn = () => {
     dispatch(setColumn({ column: 'weight' }));
     dispatch(setLogic({ logic: 'include' }));
     dispatch(setQuery({ query: '' }));
   };
 
-  // Оправление в store зачений поиска колонки ID
+  // Отправление в store значений поиска колонки ID
   const handleIdColumn = () => {
     dispatch(setColumn({ column: 'ID' }));
     dispatch(setQuery({ query: '' }));
   };
 
   return (
-    <StyledFilterDiv>
+    <StyledFilterModalDiv>
       <input
         ref={inputRef}
         className='search'
@@ -138,8 +138,8 @@ const Filter = () => {
           )}
         </div>
       </div>
-    </StyledFilterDiv>
+    </StyledFilterModalDiv>
   );
 };
 
-export default Filter;
+export default FilterModal;

@@ -21,7 +21,7 @@ type FormValues = {
 const CreateModal = () => {
   const dispatch = useAppDispatch();
 
-  // Предустановленые значения для формы создания записи
+  // Предустановленные значения для формы создания записи
   const defaultValues = {
     date: new Date(),
     available: false,
@@ -32,8 +32,8 @@ const CreateModal = () => {
     mode: 'onSubmit',
   });
 
-  // Отправка запраса на созадние записи
-  // При успешном удалении – показ уведовмения об создании
+  // Отправка запроса на создание записи
+  // При успешном удалении – показ уведомления о создании
   // При ошибке – уведомление об ошибке
   const handleCreate: SubmitHandler<FormValues> = async (data) => {
     try {

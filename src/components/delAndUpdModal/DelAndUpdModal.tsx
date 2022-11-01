@@ -34,8 +34,8 @@ const DelAndUpdModal: React.FC<DelAndUpdModalProps> = ({ itemId }) => {
     mode: 'onSubmit',
   });
 
-  // Отправка запраса на удаление записи
-  // При успешном удалении – показ уведовмения об удалении
+  // Отправка запроса на удаление записи
+  // При успешном удалении – показ уведомления об удалении
   // При ошибке – уведомление об ошибке
   const handleDelete = async (id: ObjectId) => {
     try {
@@ -48,8 +48,8 @@ const DelAndUpdModal: React.FC<DelAndUpdModalProps> = ({ itemId }) => {
     }
   };
 
-  // Отправка запраса на изменение записи
-  // При успешном удалении – показ уведовмения об изменении
+  // Отправка запроса на изменение записи
+  // При успешном удалении – показ уведомления об изменении
   // При ошибке – уведомление об ошибке
   const handleUpdate: SubmitHandler<FormValues> = async (data) => {
     console.log(data.available)

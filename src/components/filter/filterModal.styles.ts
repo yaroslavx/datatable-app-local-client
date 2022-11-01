@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledFilterDiv = styled.div`
+export const StyledFilterModalDiv = styled.div`
   position: absolute;
   top: 50px;
   width: 270px;

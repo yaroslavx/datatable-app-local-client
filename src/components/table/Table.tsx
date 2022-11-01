@@ -49,7 +49,8 @@ const Table: React.FC<TableProps> = ({ data }) => {
     return data.slice(firstPageIndex, lastPageIndex);
   }, [currentPage, data]);
 
-  // При изменении фильтрации, устанавливается первая страница
+  // При изменении фильтрации, устанавливается первая страница. 
+  // В случае удаления записи происходит refetch data, поэтому заодно закрывается модальное окно удаления записи.
   useEffect(() => {
     setCurrentPage(1);
     setPopupId(-1);
@@ -68,7 +69,7 @@ const Table: React.FC<TableProps> = ({ data }) => {
     setPopupId(ID);
   };
 
-  // Отображения даты в нужном формате
+  // Отображение даты в нужном формате
   const timeOptions: TimeOtions = {
     year: 'numeric',
     month: 'numeric',
