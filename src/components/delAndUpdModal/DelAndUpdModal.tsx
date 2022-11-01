@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyledDelUpdModalDiv } from './DelAndUpdModal.styles';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import {
   setRefresh,
   setRefreshEvent,
@@ -9,6 +8,7 @@ import {
 import axios from 'axios';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { ObjectId } from 'bson';
+import { useAppDispatch } from '../../redux/store';
 
 interface DelAndUpdModalProps {
   itemId: ObjectId
@@ -20,7 +20,7 @@ type FormValues = {
 };
 
 const DelAndUpdModal: React.FC<DelAndUpdModalProps> = ({ itemId }) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [visibleUpd, setVisibleUpd] = useState(false);
   const [visibleDel, setVisibleDel] = useState(false);
 

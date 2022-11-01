@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyledCreateModalForm } from './createModal.styles';
-import { useDispatch } from 'react-redux';
 import {
   setRefresh,
   setRefreshEvent,
@@ -9,6 +8,7 @@ import axios from 'axios';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import ReactDatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { useAppDispatch } from '../../redux/store';
 
 type FormValues = {
   date: Date;
@@ -19,7 +19,7 @@ type FormValues = {
 };
 
 const CreateModal = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   // Предустановленые значения для формы создания записи
   const defaultValues = {

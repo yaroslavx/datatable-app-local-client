@@ -1,14 +1,15 @@
 import React from 'react';
 import { StyledFilterDiv } from './filter.styles';
 import { useCallback, useRef, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { setQuery, setColumn, setLogic } from '../../redux/filter/filterSlice';
 import debounce from 'lodash.debounce';
 import { FaGreaterThan, FaLessThan, FaEquals } from 'react-icons/fa';
 import { selectFilter } from '../../redux/filter/filterSelector';
+import { useAppDispatch } from '../../redux/store';
 
 const Filter = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [, setValue] = useState('');
   const { column, logic, query } = useSelector(selectFilter);
   const inputRef = useRef(null);

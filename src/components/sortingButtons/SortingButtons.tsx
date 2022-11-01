@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyledSortingBtn } from './sortingButtons.styles';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { setSort } from '../../redux/filter/filterSlice';
 import {
   FaSortAlphaDown,
@@ -10,10 +10,11 @@ import {
 } from 'react-icons/fa';
 import { selectFilter } from '../../redux/filter/filterSelector';
 import { Sort } from '../../redux/filter/filterTypes';
+import { useAppDispatch } from '../../redux/store';
 
 // Кнопка сортировки строк по возрастанию
 export const AscLetters: React.FC<Sort> = ({ sortProperty, option }) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { sort } = useSelector(selectFilter);
   return (
     <StyledSortingBtn>
@@ -35,7 +36,7 @@ export const AscLetters: React.FC<Sort> = ({ sortProperty, option }) => {
 
 // Кнопка сортировки строк по убыванию
 export const DescLetters: React.FC<Sort> = ({ sortProperty, option }) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { sort } = useSelector(selectFilter);
   return (
     <StyledSortingBtn>
@@ -57,7 +58,7 @@ export const DescLetters: React.FC<Sort> = ({ sortProperty, option }) => {
 
 // Кнопка сортировки чисел по возрастанию
 export const AscNums: React.FC<Sort> = ({ sortProperty, option }) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { sort } = useSelector(selectFilter);
   return (
     <StyledSortingBtn>
@@ -79,7 +80,7 @@ export const AscNums: React.FC<Sort> = ({ sortProperty, option }) => {
 
 // Кнопка сортировки чисел по убыванию
 export const DescNums: React.FC<Sort> = ({ sortProperty, option }) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { sort } = useSelector(selectFilter);
   return (
     <StyledSortingBtn>
